@@ -64,7 +64,7 @@ data.plot(figsize=(12, 8), legend=True, label='Current Gold Price')
 forecast_predictions.plot(legend=True, label='Forecasted Gold Price')
 plt.xlabel('Date')
 plt.ylabel('Price')
-plt.title('Gold Price Forecast')
+plt.title('Amazon Stock Price Forecast')
 plt.show()
 ```
 
