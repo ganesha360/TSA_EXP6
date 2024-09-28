@@ -1,12 +1,12 @@
-### Name  : KARTHIKEYAN R 
-### Reg.No: 212222240046
+### Name  : GANESH R
+### Reg.No: 212222240029
 ### Date  : 
 
 # Ex.No: 6               HOLT WINTERS METHOD
 ### AIM:
    To implement the Holt Winters Method Model using Python.
 ### ALGORITHM:
-1. Load and resample the gold price data to monthly frequency, selecting the 'Price' column.
+1. Load and resample the Amazon stock price data to monthly frequency, selecting the 'Price' column.
 2. Scale the data using Minmaxscaler then split into training (80%) and testing (20%) sets.
 3. Fit an additive Holt-Winters model to the training data and forecast on the test data.
 4. Evaluate model performance using MAE and RMSE, and plot the train, test, and prediction results.
@@ -19,13 +19,13 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import pandas as pd
 
-data = pd.read_csv('/content/Gold Price.csv', index_col='Date', parse_dates=True)
+data = pd.read_csv('/content/Amazon.csv', index_col='Date', parse_dates=True)
 
 # Calculate the mean of all columns resampled to month start frequency
 data = data.resample('MS').mean() 
 
 # Select the 'PRICE' column for analysis
-data = data['Price']
+data = data['Volume']
 
 # Scaling the Data using MinMaxScaler 
 scaler = MinMaxScaler()
@@ -70,14 +70,17 @@ plt.show()
 
 ### OUTPUT:
 
-![image](https://github.com/user-attachments/assets/d5e9e423-badf-43e8-a20a-f11dbaf47d2d)
+![image](https://github.com/user-attachments/assets/10eddcf3-2b14-41c3-881d-fe80d3529f92)
+
 
 
 #### TEST_PREDICTION
-![Untitled](https://github.com/user-attachments/assets/babcd073-db02-49c6-889b-1e67e042bb0c)
+![image](https://github.com/user-attachments/assets/0a540d81-464c-4921-a0cf-9061a0850e13)
+
 
 #### FINAL_PREDICTION
-![Untitled](https://github.com/user-attachments/assets/49696fd9-e49a-4436-83de-07b43db8ed31)
+![image](https://github.com/user-attachments/assets/1350013f-580c-4fb9-bd1a-2cd5859866ca)
+
 
 ### RESULT:
 Thus the program run successfully based on the Holt Winters Method model.
